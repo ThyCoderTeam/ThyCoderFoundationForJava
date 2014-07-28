@@ -8,9 +8,10 @@ import java.util.Arrays;
 public class LearningTest {
     @Test
     public void testDeclaredMethods() {
-        System.out.println("A" + Arrays.toString(A.class.getDeclaredMethods()));
-        System.out.println("A1" + Arrays.toString(A1.class.getDeclaredMethods()));
-        System.out.println("A11" + Arrays.toString(A11.class.getDeclaredMethods()));
+        Class[] classes = {A.class, A1.class, A11.class, A12.class};
+        for (Class clazz : classes) {
+            System.out.println(clazz.getSimpleName() + Arrays.toString(clazz.getDeclaredMethods()));
+        }
     }
     public static interface A {
         public void hello();
